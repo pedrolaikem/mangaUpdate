@@ -1,0 +1,52 @@
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: #0f1923;
+  background-color: #f0f4f8;
+  font-variant-numeric: tabular-nums;
+}
+
+.app-shell {
+  position: relative;
+}
+
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% -5%, rgba(13, 75, 112, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 105%, rgba(229, 107, 57, 0.06) 0%, transparent 60%);
+}
+
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.status-dot-active {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes manga-highlight {
+  0% {
+    background-color: rgba(36, 121, 79, 0.3);
+  }
+  90% {
+    background-color: rgba(36, 121, 79, 0.3);
+  }
+  100% {
+    background-color: rgba(36, 121, 79, 0);
+  }
+}
